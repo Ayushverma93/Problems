@@ -7,3 +7,13 @@ class Solution {
 
             if (sum == target) {
                 return new int[]{left + 1, right + 1}; // 1-indexed
+                 } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return new int[]{-1, -1};
+
+    }
+}
