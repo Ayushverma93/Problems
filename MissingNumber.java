@@ -7,3 +7,6 @@ class Solution {
                 return i;
             }
         }
+        return nums.length;
+    }
+}
