@@ -6,3 +6,4 @@ class Solution {
             }
         ListNode reversedList = reverseList(head.next);
         head.next.next = head;
+        
