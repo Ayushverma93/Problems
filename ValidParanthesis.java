@@ -11,3 +11,10 @@ class Solution {
                 if ((ch == ')' && top != '(') ||
                     (ch == '}' && top != '{') ||
                     (ch == ']' && top != '[')) {
+                         return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+}
