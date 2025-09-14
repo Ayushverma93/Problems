@@ -11,3 +11,7 @@ class Solution {
             }else{
                 temp = temp.next;
             }
+            }
+        return dummy.next;
+    }
+}
