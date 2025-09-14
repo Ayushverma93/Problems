@@ -7,3 +7,7 @@ class Solution {
 
         while (temp.next != null){
             if (temp.next.val == val){
+                temp.next= temp.next.next;
+            }else{
+                temp = temp.next;
+            }
