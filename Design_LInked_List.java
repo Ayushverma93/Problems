@@ -77,6 +77,7 @@ class MyLinkedList {
         temp.next = newNode;
         size++;
     }
+    
     // Delete at index
     public void deleteAtIndex(int index) {
         if (index < 0 || index >= size) return;
