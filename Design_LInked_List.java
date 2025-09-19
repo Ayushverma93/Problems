@@ -77,4 +77,26 @@ class MyLinkedList {
         temp.next = newNode;
         size++;
     }
+    // Delete at index
+    public void deleteAtIndex(int index) {
+        if (index < 0 || index >= size) return;
 
+        if (index == 0) {
+            head = head.next;
+            if (head == null) { // list became empty
+                tail = null;
+            }
+        } else {
+            Node temp = head;
+            for (int i = 0; i < index - 1; i++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+
+            if (index == size - 1) { // deleted last node
+                tail = temp;
+            }
+        }
+        size--;
+    }
+}
