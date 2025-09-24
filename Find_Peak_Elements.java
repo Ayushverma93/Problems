@@ -9,4 +9,12 @@ class Solution {
             if (nums[mid] < nums[mid + 1]) {
                 // Peak lies on the right side
                 left = mid + 1;
+            } else {
+                // Peak is at mid or on the left side
+                right = mid;
             }
+        }
+
+        return left;
+    }
+}
