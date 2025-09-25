@@ -15,3 +15,20 @@ class Solution {
                 if (stack.isEmpty()) {
                     return false;  // no opening bracket to match
                 }
+
+                char top = stack.peek();
+                if ((top == '(' && ch == ')') ||
+                    (top == '{' && ch == '}') ||
+                    (top == '[' && ch == ']')) {
+                    stack.pop();  // valid match
+                } else {
+                    return false; // mismatch
+                }
+            }
+        }
+
+        // If stack is empty, all brackets matched
+        return stack.isEmpty();
+    }
+}
+
