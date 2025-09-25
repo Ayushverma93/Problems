@@ -6,4 +6,12 @@ class Solution {
 
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-            
+
+            // If opening bracket, push to stack
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
+            } else {
+                // If closing bracket, check matching
+                if (stack.isEmpty()) {
+                    return false;  // no opening bracket to match
+                }
