@@ -6,3 +6,12 @@ public class Solution {
         if(head == null || head.next == null ){
             return null;
         }
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow){
+                ListNode start = head;
+                while(start != slow){
+                    start = start.next;
+                    slow = slow.next;
+                }
