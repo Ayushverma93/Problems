@@ -15,3 +15,9 @@ public class Solution {
                     start = start.next;
                     slow = slow.next;
                 }
+                return start;
+            }
+        }
+        return null;
+    }
+}
