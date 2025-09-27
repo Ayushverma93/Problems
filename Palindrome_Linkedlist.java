@@ -8,3 +8,12 @@ class Solution {
             slow = slow.next;
             fast = fast.next.next;
         }
+
+        // Step 2: Reverse second half
+        ListNode curr = slow, prev = null, temp;
+        while (curr != null) {
+            temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
