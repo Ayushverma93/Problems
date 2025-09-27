@@ -17,3 +17,15 @@ class Solution {
             prev = curr;
             curr = temp;
         }
+
+        // Step 3: Compare both halves
+        ListNode left = head, right = prev;
+        while (right != null) {
+            if (left.val != right.val) return false;
+            left = left.next;
+            right = right.next;
+        }
+
+        return true;
+    }
+}
