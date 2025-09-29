@@ -24,3 +24,8 @@ class Solution {
             } else {
                 right = mid - 1;
             }
+        }
+        
+        return result; // result is the floor of sqrt(x)
+    }
+}
