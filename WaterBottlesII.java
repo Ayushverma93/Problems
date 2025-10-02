@@ -10,3 +10,6 @@ class Solution {
             totalDrank += 1;                               // Count newly drunk bottle
             numExchange += 1;                              // Increment exchange value for next round
         }
+         return totalDrank;
+    }
+}
