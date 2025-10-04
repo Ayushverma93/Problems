@@ -14,3 +14,19 @@ class MinStack {
             minStack.push(val);
         }
     }
+
+    public void pop() {
+        int removed = stack.pop();
+        if (removed == minStack.peek()) {
+            minStack.pop();
+        }
+    }
+
+    public int top() {
+        return stack.peek();
+    }
+
+    public int getMin() {
+        return minStack.peek();
+    }
+}
