@@ -1,2 +1,4 @@
 //---------------------Remove duplicate from sorted Array--------------------
-
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        // We use two pointer methods first use a temp value and second use for compare and store. 
