@@ -8,3 +8,6 @@ class Solution {
                 nums[++j]=nums[i];
             }
         }
+        return ++j;
+    }
+}
