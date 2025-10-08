@@ -14,3 +14,9 @@ class Solution {
                   count = 0;
             }
         }
+        if (count > max) {
+            return count;
+        }
+        return max;
+    }
+}
