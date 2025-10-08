@@ -8,4 +8,4 @@ class Solution {
 
         return Math.max(option1,option2);
     }
-}
+}   
