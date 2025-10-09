@@ -7,7 +7,10 @@ class Solution {
                 result |= num;
             }
         }
+        
         return result;
     }
 }
+
+
 
