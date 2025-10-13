@@ -7,4 +7,12 @@ class Solution {
             char[] chars = word.toCharArray();
             Arrays.sort(chars);
             String sorted = new String(chars);
+                   if(!sorted.equals(prev)){
+                result.add(word);
+                prev = sorted;
+                }
+        }
+        return result;
+    }
+}
 
