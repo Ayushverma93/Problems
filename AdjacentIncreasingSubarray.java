@@ -17,3 +17,10 @@ class Solution {
                     second = false;
                     break;
                 }
+                }
+            if(second) return true;
+
+        }
+        return false;
+    }
+}
