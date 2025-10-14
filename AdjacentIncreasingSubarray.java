@@ -6,3 +6,4 @@ class Solution {
             boolean first = true, second = true;
             for(int j = i; j<i+k-1; j++){
                 if(nums.get(j) >= nums.get(j+1)){
+                    
