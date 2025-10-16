@@ -16,3 +16,7 @@ class Solution {
             }else{
                 break;
             }
+            }
+        return mex;
+    }
+}
