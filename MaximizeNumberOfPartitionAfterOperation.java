@@ -25,3 +25,26 @@ class Solution {
         if (canChange) {
             for (int c = 0; c < 26; ++c) {
                 int newBit = 1 << c;
+                res = Math.max(res, applyChoice(s, i, false, mask, newBit, k, mem));
+            }
+        }
+
+        mem.put(key, res);
+        return res;
+    }
+
+    // Helper: after choosing a letter at position i (represented by newBit),
+    // either we can continue current partition (if mask|newBit has <= k distinct)
+    // or we must start a new partition (count +1) and the new partition's mask becomes newBit.
+    private int applyChoice(String s, int i, boolean nextCanChange, int curMask, int newBit, int k, Map<Long, Integer> mem) {
+        int newMask = curMask | newBit;
+        if (Integer.bitCount(newMask) > k) {
+            // must start a new partition here; this letter begins that partition
+            return 1 + dp(s, i + 1, nextCanChange, newBit, k, mem);
+        } else {
+            // can continue current partition
+            return dp(s, i + 1, nextCanChange, newMask, k, mem);
+        }
+    }
+}
+
