@@ -19,3 +19,6 @@ class Solution {
             }
 
             String added = new String(arr);
+             String rotated = cur.substring(cur.length() -b) + cur.substring(0, cur.length() -b );
+            if(seen.add(added)) queue.offer(added);
+            if(seen.add(rotated)) queue.offer(rotated);
