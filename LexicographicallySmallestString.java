@@ -1,0 +1,1 @@
+//-------------lexicographically smaleest string--------------
