@@ -12,3 +12,10 @@ class Solution {
             if(cur.compareTo(smallest) <0){
                 smallest = cur;
             }
+            char[] arr = cur.toCharArray();
+            for(int i = 1; i<arr.length; i +=2){
+                int newDigit = (arr[i] - '0' +a) % 10;
+                arr[i] = (char) (newDigit + '0');
+            }
+
+            String added = new String(arr);
