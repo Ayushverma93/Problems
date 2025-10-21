@@ -10,3 +10,7 @@ public class Solution {
             diff.put(num - k, diff.getOrDefault(num - k, 0) + 1);
             diff.put(num + k + 1, diff.getOrDefault(num + k + 1, 0) - 1);
             }
+            int maxFreq = 0, current = 0;
+        // Sweep through all possible values
+        for (int val : diff.keySet()) {
+            current += diff.get(val);
