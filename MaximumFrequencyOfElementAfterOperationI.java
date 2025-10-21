@@ -14,3 +14,9 @@ public class Solution {
         // Sweep through all possible values
         for (int val : diff.keySet()) {
             current += diff.get(val);
+            int possible = Math.min(current, freqMap.getOrDefault(val, 0) + numOperations);
+             maxFreq = Math.max(maxFreq, possible);
+        }
+        return maxFreq;
+    }
+}
