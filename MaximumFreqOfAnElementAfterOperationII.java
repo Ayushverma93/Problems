@@ -13,3 +13,11 @@ class Solution {
         events.addAll(count.keySet());
 
         int ans = 0, running = 0;
+        for(long point : events){
+            running += diff.getOrDefault(point, 0);
+            int canTarget= Math.min(running, count.getOrDefault(point, 0) + numOperations);
+            ans = Math.max(ans, canTarget);
+        }
+        return ans;
+    }
+}
