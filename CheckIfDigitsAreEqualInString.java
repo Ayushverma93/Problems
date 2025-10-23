@@ -40,3 +40,9 @@ class Solution {
         if (k > n) return 0;
         if (k == 0 || k == n) return 1;
         int res = 1;
+        for (int i = 0; i < k; ++i) {
+            res = res * (n - i) / (i + 1);
+        }
+        return res;
+    }
+}
