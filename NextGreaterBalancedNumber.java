@@ -14,3 +14,8 @@ class Solution {
             temp /= 10;
         }
         for(int d= 0; d < 10; d++){
+             if (count[d] != 0 && count[d] != d) return false;
+        }
+        return true;
+    }
+}
