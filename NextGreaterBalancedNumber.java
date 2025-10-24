@@ -5,3 +5,12 @@ class Solution {
             if(isBalanced(num)) return num;
         }
         return -1;
+         }
+    private boolean isBalanced(int num){
+        int[] count = new int[10];
+        int temp = num;
+        while(temp > 0){
+            count[temp % 10] ++;
+            temp /= 10;
+        }
+        for(int d= 0; d < 10; d++){
