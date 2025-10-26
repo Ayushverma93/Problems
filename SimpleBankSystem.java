@@ -11,5 +11,12 @@ class Bank {
         return false;
         if(balance[account1 -1] < money)
         return false;
+        balance[account1 - 1] -= money;
+        balance[account2 -1] += money;
+        return true;
+        
+    }
+    
+    public boolean deposit(int account, lon
 
     
