@@ -25,5 +25,19 @@ class Bank {
         return true;
         
     }
+     public boolean withdraw(int account, long money) {
+        if(!isValidAccount(account))
+        return false;
+        if(balance[account - 1] < money)
+        return false;
+
+        balance[account - 1] -= money;
+        return true;
+    }
+    private boolean isValidAccount(int account){
+        return account >=1 && account <= balance.length;
+    }
+}
+
 
     
