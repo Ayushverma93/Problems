@@ -18,3 +18,12 @@ class Solution {
             if(simulate(nums, i, -1, limit)) total++;
         }
         return total;
+        }
+    private boolean simulate(int[] nums, int start, int dir, long limit){
+        int n = nums.length;
+        int[] arr = nums.clone();
+        int curr = start;
+        long steps = 0;
+
+        while(curr >= 0 && curr<n){
+            if(steps > limit) return false;
