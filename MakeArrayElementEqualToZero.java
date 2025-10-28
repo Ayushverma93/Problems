@@ -27,3 +27,16 @@ class Solution {
 
         while(curr >= 0 && curr<n){
             if(steps > limit) return false;
+             if(arr[curr] == 0){
+                curr +=dir;
+            }else{
+                arr[curr]--;
+                dir =-dir;
+                curr += dir;
+            }
+            steps++;
+        }
+        for (int v : arr) if (v != 0) return false;
+        return true;
+    }
+}
