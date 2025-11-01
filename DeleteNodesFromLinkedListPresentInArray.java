@@ -9,3 +9,8 @@ class Solution {
         dummy.next = head;
 
         ListNode current = dummy;
+        while(current.next != null){
+            if(set.contains(current.next.val)){
+                current.next = current.next.next;
+            }else{
+                current = current.next;
