@@ -7,3 +7,7 @@ class Solution {
             if(colors.charAt(i) == colors.charAt(i-1)){
                 totalTime += Math.min(maxTime, neededTime[i]);
                 maxTime = Math.max(maxTime, neededTime[i]);
+                }else{
+                maxTime = neededTime[i];
+            }
+        }
