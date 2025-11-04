@@ -12,3 +12,13 @@ class Solution {
             for (int i = start; i < start + k; i++) {
                 freq[nums[i]]++;
             }
+
+             // Create a list of (value, frequency)
+            List<int[]> list = new ArrayList<>();
+            for (int value = 1; value <= 50; value++) {
+                if (freq[value] > 0) {
+                    list.add(new int[]{value, freq[value]});
+                }
+            }
+
+            // Sort by highest frequency, then largest value
