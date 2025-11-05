@@ -74,3 +74,20 @@ class Solution {
                 } else break;
             }
         };
+        Consumer<Integer> add = (num) -> {
+            int old = freq.getOrDefault(num, 0);
+            if (old > 0) {
+                Node oldNode = new Node(num, old);
+                // remove the old node from whichever set it resides in
+                if (top.remove(oldNode)) {
+                    sumTop[0] -= 1L * oldNode.val * oldNode.freq;
+                } else {
+                    rest.remove(oldNode);
+                }
+            }
+            int nw = old + 1;
+            freq.put(num, nw);
+            rest.add(new Node(num, nw)); // new node goes to rest, balance will handle promotion
+            balance.run();
+        };
+
