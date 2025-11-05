@@ -28,3 +28,34 @@ class Solution {
             return Objects.hash(val, freq);
         }
     }
+
+    public long[] findXSum(int[] nums, int k, int x) {
+        int n = nums.length;
+        long[] ans = new long[n - k + 1];
+
+        Map<Integer, Integer> freq = new HashMap<>();
+        TreeSet<Node> top = new TreeSet<>();   // holds up to x best nodes
+        TreeSet<Node> rest = new TreeSet<>();  // holds the others
+
+        long[] sumTop = new long[1]; // mutable inside lambdas
+
+        // balance ensures top.size() <= x and top contains the best x nodes
+        Runnable balance = () -> {
+            // promote from rest until top has x items (or rest empty)
+            while (top.size() < x && !rest.isEmpty()) {
+                Node best = rest.pollFirst(); // best in rest
+                top.add(best);
+                sumTop[0] += 1L * best.val * best.freq;
+            }
+
+            // if top has more than x, demote worst
+            while (top.size() > x) {
+                Node worst = top.pollLast();
+                rest.add(worst);
+                sumTop[0] -= 1L * worst.val * worst.freq;
+            }
+
+            // swap while best in rest is strictly better than worst in top
+            while (!top.isEmpty() && !rest.isEmpty()) {
+                Node worstTop = top.last();   // worst among top
+                Node bestRest = rest.first(); // best among rest
