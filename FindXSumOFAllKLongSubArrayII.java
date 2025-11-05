@@ -15,3 +15,16 @@ class Solution {
             if (this.freq != o.freq) return Integer.compare(o.freq, this.freq);
             return Integer.compare(o.val, this.val);
         }
+         // helpful for TreeSet.remove(...) to find exact node
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof Node)) return false;
+            Node p = (Node) o;
+            return this.val == p.val && this.freq == p.freq;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(val, freq);
+        }
+    }
