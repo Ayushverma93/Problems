@@ -59,3 +59,18 @@ class Solution {
             while (!top.isEmpty() && !rest.isEmpty()) {
                 Node worstTop = top.last();   // worst among top
                 Node bestRest = rest.first(); // best among rest
+
+                // bestRest is better than worstTop if compareTo(bestRest, worstTop) < 0
+                if (bestRest.compareTo(worstTop) < 0) {
+                    // swap them
+                    top.remove(worstTop);
+                    rest.remove(bestRest);
+
+                    sumTop[0] -= 1L * worstTop.val * worstTop.freq;
+                    sumTop[0] += 1L * bestRest.val * bestRest.freq;
+
+                    top.add(bestRest);
+                    rest.add(worstTop);
+                } else break;
+            }
+        };
