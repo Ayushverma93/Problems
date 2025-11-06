@@ -24,3 +24,16 @@ class Solution {
         Arrays.fill(online, true);
 
         List<Integer> ans = new ArrayList<>();
+         for (int[] q : queries) {
+            int type = q[0], x = q[1];
+            int root = find(x, parent);
+            if (type == 1) {
+                // Query: find a station to handle maintenance for x's grid
+                if (online[x]) {
+                    ans.add(x);
+                } else {
+                    TreeSet<Integer> set = onlineStations.get(root);
+                    if (set == null || set.isEmpty()) ans.add(-1);
+                    else ans.add(set.first());
+                }
+            } else {
