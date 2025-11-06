@@ -48,3 +48,8 @@ class Solution {
         // Convert result to array
         return ans.stream().mapToInt(i -> i).toArray();
     }
+     private int find(int x, int[] par) {
+        if (par[x] != x) par[x] = find(par[x], par); // Path compression
+        return par[x];
+    }
+}
