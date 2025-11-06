@@ -37,3 +37,14 @@ class Solution {
                     else ans.add(set.first());
                 }
             } else {
+                // type==2, set x offline and remove from TreeSet
+                if (online[x]) {
+                    online[x] = false;
+                    TreeSet<Integer> set = onlineStations.get(root);
+                    if (set != null) set.remove(x);
+                }
+            }
+        }
+        // Convert result to array
+        return ans.stream().mapToInt(i -> i).toArray();
+    }
