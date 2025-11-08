@@ -5,3 +5,5 @@ class Solution {
         inorder(root, result);
         return result;
     }
+     private void inorder(TreeNode node, List<Integer> result){
+        if(node == null) return;
