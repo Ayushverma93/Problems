@@ -15,3 +15,10 @@ class Solution {
                 minAbs = Math.min(minAbs, absVal);
             }
         }
+        if (negCount % 2 == 1) {
+            sumAbs -= 2L * minAbs;
+        }
+
+        return sumAbs;
+    }
+}
