@@ -8,3 +8,10 @@ class Solution {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 int val = matrix[i][j];
+                if (val < 0) negCount++;
+
+                int absVal = Math.abs(val);
+                sumAbs += absVal;
+                minAbs = Math.min(minAbs, absVal);
+            }
+        }
