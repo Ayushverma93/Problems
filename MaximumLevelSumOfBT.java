@@ -11,4 +11,20 @@ class Solution {
             int sum = 0;
             for(int i = 0; i<levelsize; i++){
                 TreeNode curr = q.remove();
-                sum += curr.val;        
+                sum += curr.val;     
+                if(curr.left!=null){
+                    q.add(curr.left);
+                }
+                if(curr.right!=null){
+                    q.add(curr.right);
+                }
+            }
+            if(sum > maxsum){
+                maxsum = sum;
+                maxlevel = level;
+            }
+            level++;
+        }
+        return maxlevel;
+    }
+}   
