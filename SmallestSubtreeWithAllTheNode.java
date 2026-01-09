@@ -30,3 +30,16 @@ class Solution {
         }
 
         Set<TreeNode> deepest = new HashSet<>(lastLevel);
+
+       // Move upward until all nodes converge
+        while (deepest.size() > 1) {
+            Set<TreeNode> next = new HashSet<>();
+            for (TreeNode node : deepest) {
+                next.add(parent.get(node));
+            }
+            deepest = next;
+        }
+
+        return deepest.iterator().next();
+    }
+}
