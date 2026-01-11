@@ -9,3 +9,6 @@ class Solution {
         res.add(nums[idx]);
         solve(idx+1,ans,res,nums,n);
         res.remove(res.size()-1);
+
+        solve(idx+1,ans,res,nums,n);
+    }
