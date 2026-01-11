@@ -12,3 +12,11 @@ class Solution {
 
         solve(idx+1,ans,res,nums,n);
     }
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
+
+        solve(0,ans,res,nums,nums.length);
+        return ans;        
+    }
+}
