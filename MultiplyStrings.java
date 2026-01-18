@@ -31,3 +31,8 @@ class Solution {
             if (!(sb.length() == 0 && num == 0)) {
                 sb.append(num);
             }
+            }
+
+        return sb.toString();
+    }
+}
