@@ -25,3 +25,10 @@ class Solution {
         while (stepsToNewHead-- > 0) {
             newTail = newTail.next;
         }
+        // Step 5: Break the circle
+        ListNode newHead = newTail.next;
+        newTail.next = null;
+
+        return newHead;
+    }
+}
