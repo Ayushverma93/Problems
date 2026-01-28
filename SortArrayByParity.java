@@ -9,3 +9,13 @@ class Solution {
                 idx = idx+1;
             }
         }
+        for(int i = 0 ; i < nums.length; i++){
+            if(nums[i] % 2 != 0){
+                result[idx] = nums[i];
+                idx = idx+1;
+            }
+        }
+        return result;
+    }
+}
+
