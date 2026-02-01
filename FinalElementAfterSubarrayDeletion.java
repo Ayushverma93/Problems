@@ -8,3 +8,4 @@ class Solution {
         return Math.max(nums[0], nums[n - 1]);
     }
 }
+
